@@ -16,6 +16,8 @@ export default drizzle => (contractName, methodName) => {
     send: (...args) =>
       setStackIDs(stackIDs => [...stackIDs, contractMethod.cacheSend(...args)]),
     status:
-      TXObjects[TXObjects.length - 1] && TXObjects[TXObjects.length - 1].status
+      TXObjects[TXObjects.length - 1] && TXObjects[TXObjects.length - 1].status,
+		stackIds: 
+			stackIDs //&& stackIds[stackIds.length - 1]
   }
 }
